@@ -1,0 +1,62 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Network configuration and maintenance, installation of services and servers</h2>
+		<p>with a strong experiense in network configuration and maintenance, as well as a proven ability in installing services and servers, I am capable of effectively managing an IT network. My experience allows me to apply key concepts to ensure optimal performence, enhanced security, and continuous service availability.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="monitoring" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Monitoring and security system</h2>
+		<p>I am very passionate about security system and network monitoring because I have had a lot of experience working with various tools such as Nagios, EyesOfNetwork,PRTG, Cacti, PFSense and snort. </p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>frond-end developer</h2>
+		<p>I have good skills in programming languages and technologies such as: HTML,CSS,Javascript,bootstrap. I am curious and keep abreast of the latest trends and developments. in addition to my technical skills, I am able to solve problems, I have an understanding of user experience.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

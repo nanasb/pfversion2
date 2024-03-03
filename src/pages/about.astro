@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Nana souaibou bouhari" description="Quelque chose à modifier">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+
+				<img
+					align="right"
+					width="500"
+					height="200"
+					src="/assets/img_equipe.jpg"
+					alt="nana sb team"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-titleT">Team</h2>
+				<div class="content">
+				<p>
+				I am a young graduate with a solid academic background in IT, notably with a Master I in System and Software in Distributed Environment in progress and a Technological bachelor's degree in Networking and Internet, obtained with first class honors. My professional experiences, such as the creation of a personalized web application to meet the needs of verifying names in an organization's Excel files, the deployment of a VoIP and videoconferencing solution, the implementation of a systems and network supervision server, as well as computer hardware maintenance, demonstrate my practical expertise in the field. My background shows my commitment and technical skills, which makes me an ideal candidate for a position in the IT field.<br>
+				</p>
+					<p>
+
+			<img
+					alt="Nana sb
+					width="720"
+					height="25"
+					src="/assets/img_cv.JPG"
+					id="imgnana"
+			/>
+					<script>
+					document.getElementById('imgnana').addEventListener('click', function() {
+  let pdfUrl = '/assets/cv_nana.pdf';
+  let modal = document.createElement('div');
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100%';
+  modal.style.height = '100%';
+  modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  modal.style.zIndex = '9999';
+  
+  let pdfEmbed = document.createElement('embed');
+  pdfEmbed.src = pdfUrl;
+  pdfEmbed.width = '100%';
+  pdfEmbed.height = '100%';
+  
+  modal.appendChild(pdfEmbed);
+  document.body.appendChild(modal);
+  
+  modal.addEventListener('click', function() {
+    document.body.removeChild(modal);
+  });
+});
+					</script>
+					</p>	
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title"><p id="voir_cv"> <a href="/assets/cv_nana.pdf"> <u>See the resume</u> </a> </p> </h2>
+				<div class="content">
+					<p>
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 2;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.section-titleT {
+		grid-column-end: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
