@@ -7,6 +7,11 @@ export default defineConfig({
   integrations: [icon()],
   output: 'server',
   adapter: netlify(),
+  buildOptions: {
+    out: 'dist',
+  },
 });
 
 
+
+// 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
