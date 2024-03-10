@@ -6,7 +6,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   integrations: [icon()],
   output: 'server',
-  adapter: netlify(),
+  adapter: vercel(),
   buildOptions: {
     out: 'dist',
   },
