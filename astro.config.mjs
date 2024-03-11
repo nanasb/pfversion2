@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [icon()],
   output: 'server',
   adapter: vercel(),
+  // et moi
   buildOptions: {
     out: 'dist',
   },
