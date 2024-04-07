@@ -9,18 +9,50 @@ import Hero from '../components/Hero.astro';
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
+  title="About"
+  tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+>
+  <div class="image-carousel">
+    <img
+      class="carousel-image"
+      src="/assets/img_equipe.jpg"
+      alt="nana sb team"
+    />
+    <img
+      class="carousel-image"
+      src="/assets/img2.jpg"
+      alt="nana sb team 2"
+    />
+	<img
+      class="carousel-image"
+      src="/assets/img4.jpg"
+      alt="nana sb team 3"
+    />
+  </div>
+</Hero>
 
-				<img
-					align="right"
-					width="500"
-					height="200"
-					src="/assets/img_equipe.jpg"
-					alt="nana sb team"
-				/>
-			</Hero>
+<script>
+  // Fonction pour faire défiler automatiquement les images toutes les 5 secondes
+  function autoScroll() {
+    const carousel = document.querySelector('.image-carousel');
+    const images = document.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    setInterval(() => {
+      // Masquer l'image actuelle
+      images[currentIndex].style.display = 'none';
+      
+      // Passer à l'image suivante
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Afficher la nouvelle image
+      images[currentIndex].style.display = 'block';
+    }, 2000); // Changer d'image toutes les 5 secondes (2000 millisecondes)
+  }
+
+  // Appeler la fonction pour commencer le défilement automatique
+  autoScroll();
+</script>
 
 			<section>
 				<h2 class="section-titleT">Team</h2>
